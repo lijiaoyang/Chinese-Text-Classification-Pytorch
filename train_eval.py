@@ -10,6 +10,7 @@ from tensorboardX import SummaryWriter
 
 
 # 权重初始化，默认xavier
+# 如果不是transformer，需要权重初始化
 def init_network(model, method='xavier', exclude='embedding', seed=123):
     for name, w in model.named_parameters():
         if exclude not in name:
